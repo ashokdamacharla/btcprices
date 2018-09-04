@@ -1,4 +1,4 @@
-name := "play-swagger-reactivemongo"
+name := "btcprices"
 
 version := "1.0-SNAPSHOT"
 
