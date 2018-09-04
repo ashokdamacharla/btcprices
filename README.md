@@ -11,7 +11,7 @@ Run the the data load jobs as described [here](https://github.com/ashokdamacharl
 ### Setup
 Clone this repository.
 ```
-git clone https://github.com/ashokdamacharla/btcloadprices.git
+git clone https://github.com/ashokdamacharla/btcprices.git
 ```
 Import any editor or open any command prompt, move to project folder in terminal where *.sbt files are present.
 
