@@ -21,7 +21,7 @@ Update below db property/details in [application.conf](conf/application.conf) to
 mongodb.uri = "mongodb://localhost:27017/bcp"
 ```
 
-### Start APIs
+### Launch APIs
 
 Run the below command to launch the APIs.
 
@@ -32,7 +32,6 @@ sbt run
 ### Verify APIs
 Below are the list of sample APIs running in this application. To play with these APIS, go through API documentation below.  
 
-To geth 
 * [View All Historical Prices](http://localhost:9000/price)
 * [View Historical Prices for specific dates](http://localhost:9000/price?from=2018-09-1&to=2018-09-04)
 * [View Historical Prices for a duration](http://localhost:9000/price?duration=LASTWEEK)
