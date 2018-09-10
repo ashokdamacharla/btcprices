@@ -3,6 +3,7 @@
 # ~~~~
 
 GET       /price                      controllers.PriceController.getAllPrices(duration:Option[String], from:Option[String], to:Option[String])
+GET       /maxPrice                   controllers.PriceController.getMaxPrices(from:String, to:String, window:Int)
 
 GET       /prediction                 controllers.PredictionsController.getAllPredictions(from:Option[String], to:Option[String])
 GET       /strategy                   controllers.PredictionsController.getStrategy(date:String)
