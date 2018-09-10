@@ -58,7 +58,7 @@ class PriceController @Inject()(cc: ControllerComponents, priceRepo: PriceReposi
     }*/
 
 
-    priceRepo.getAll(from, to).map(_.map(_.price).toList).grouped(window).toList.map(l => l.reduceLeft(_ max _)).map { maxPrice =>
+    priceRepo.getAll(from, to).map(_.map(_.price).toList.grouped(window).toList.map(l => l.reduceLeft(_ max _))).map { maxPrice =>
       Ok(Json.toJson(maxPrice))
     }
   }
