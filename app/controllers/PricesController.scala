@@ -42,4 +42,24 @@ class PriceController @Inject()(cc: ControllerComponents, priceRepo: PriceReposi
       Ok(Json.toJson(price))
     }
   }
+
+  @ApiOperation(
+    value = "Find High Prices of a Window",
+    response = classOf[Price],
+    responseContainer = "List"
+  )
+  def getMaxPrices(@ApiParam(value = "The \"from\" is to fetch higg prices from history by its start date") from: String, 
+                    @ApiParam(value = "The \"to\" is to fetch higg prices from history till its end date") to: String,
+                    @ApiParam(value = "The \"window\" is to fetch high prices from history for last #days") window: Int
+                  ) = Action.async {
+    /*Initial trial
+    priceRepo.getAll(from, to).grouped(window).toList.map(l => l.reduceLeft(_ max _)).map { maxPrice =>
+      Ok(Json.toJson(maxPrice))
+    }*/
+
+
+    priceRepo.getAll(from, to).map(_.map(_.price).toList).grouped(window).toList.map(l => l.reduceLeft(_ max _)).map { maxPrice =>
+      Ok(Json.toJson(maxPrice))
+    }
+  }
 }
